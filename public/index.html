@@ -55,7 +55,7 @@
                   <th>Account</th>
                   <th>Lead</th>
                   <th>Last Contact</th>
-                  <th>Opportunity</th>
+                  <th>Description</th>
                   <th>Status</th>
                   <th></th>
                 </tr>
@@ -105,7 +105,7 @@
                       </td><td>
                       <input type="date" id="lastContact" class="form-control oppForm" ng-model="opportunity.lastContact" ng-required/>
                       </td><td>
-                      <input type="text" id="opportunity" placeholder="Opportunity Name" class="form-control oppForm" ng-model="newOpportunity.opportunityName" required/>
+                      <input type="text" id="opportunity" placeholder="Description" class="form-control oppForm" ng-model="newOpportunity.opportunityName" required/>
                       </td><td>
                       <select class="form-control oppForm inline" id="status" ng-model="newOpportunity.opportunityStatus" required>
                         <option>Target</option>
@@ -122,6 +122,15 @@
               </tbody>
             </table>
             <span class="label label-primary f_showShortFormRow" id="f_addNewRow">+</span>
+          </div>
+          <div class="panel-footer">
+            <p class="legend">
+            <em>Target</em> – New opportunity identified, research conducted, initial meeting set up;
+            <em>In Progress</em> – Client meeting conducted, additional-follow up;
+            <em>Submitted</em> – Submitted proposal or candidate;
+            <em>Won</em> – Won opportunity;
+            <em>Lost</em> – Lost opportunity, lessons learned collected
+            </p>
           </div>
         </div>
       </div>
@@ -143,7 +152,7 @@
                   <th>Account</th>
                   <th>Lead</th>
                   <th>Last Contact</th>
-                  <th>Opportunity</th>
+                  <th>Description</th>
                   <th>Status</th>
                   <th></th>
                 </tr>
@@ -193,7 +202,7 @@
                       </td><td>
                       <input type="date" id="lastContact" class="form-control oppForm" ng-model="opportunity.lastContact" ng-required/>
                       </td><td>
-                      <input type="text" id="opportunity" placeholder="Opportunity Name" class="form-control oppForm" ng-model="newOpportunity.opportunityName" required/>
+                      <input type="text" id="opportunity" placeholder="Description" class="form-control oppForm" ng-model="newOpportunity.opportunityName" required/>
                       </td><td>
                       <select class="form-control oppForm inline" id="status" ng-model="newOpportunity.opportunityStatus" required>
                         <option>Target</option>
@@ -210,6 +219,15 @@
               </tbody>
             </table>
             <span class="label label-primary f_showLongFormRow">+</span>
+          </div>
+          <div class="panel-footer">
+            <p class="legend">
+            <em>Target</em> – New opportunity identified, research conducted, initial meeting set up;
+            <em>In Progress</em> – Client meeting conducted, additional-follow up;
+            <em>Submitted</em> – Submitted proposal or candidate;
+            <em>Won</em> – Won opportunity;
+            <em>Lost</em> – Lost opportunity, lessons learned collected
+            </p>
           </div>
         </div>
       </div>
