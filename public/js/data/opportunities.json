@@ -1,0 +1,20 @@
+[
+	{
+		"account": "Account 123",
+		"leads": ["Peter", "Maureen"],
+		"lastContact": new Date(2016, 01, 01),
+		"opportunity": {
+			"name": "Opportunity XYZ",
+			"status": "In Progress"
+		}
+	},
+	{
+		"account": "Account ABC",
+		"leads": ["Reyes", "Peter"],
+		"lastContact": new Date(2015, 12, 31),
+		"opportunity": {
+			"name": "Opportunity ROI",
+			"status": "Proposal Submitted"
+		}
+	}
+]

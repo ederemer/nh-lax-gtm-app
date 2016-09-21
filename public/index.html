@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>LAX Go to Market</title>
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.1/d3.min.js"></script>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body role="document" ng-app="nhApp">
+<div id="headerBar"></div>
+  <div class="container-fluid theme-showcase" role="main" ng-controller="MainController">
+    <div class="page-header">
+      <h2 id="header-title">LAX Go To Market Progress</h2>
+      <img id="header-img" src="http://www.northhighland.com/-/media/Images/NH/Content/Logo/nh_share_logo.jpg" alt="NH Logo" style="height: 50px; width: 200px; float: right;">
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2">
+        <p class="inline" style="font-size: 16px; margin-bottom: 10px; margin-top: 10px">Above the Funnel Opportunities:</p>
+       <p ng-repeat="chartData in chartData | filter: { _id : '' }"><span class="badge inline" style="font-size: 16px" >{{ chartData.value }}</span> {{ chartData._id }} </p>
+        <!--<span class="badge inline" style="font-size: 16px">24</span>
+        <div id="chart">
+        </div>-->
+        <!--<donut-chart data="data"></donut-chart>-->
+      </div>
+      <div class="col-md-4">
+      <div>
+          <h4>Leaderboard:</h4>
+          <ul class="list-group">
+            <li ng-class="{ 'active': $first }" class="list-group-item" ng-repeat="leader in leaders"><span class="badge">{{ leader.opportunityCount }}</span>{{ leader._id }}</li>
+          </ul>
+      </div>
+      </div>
+    </div>
+    <div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            Short Cycle
+          </div>
+          <div class="panel-body">
+          <h4>
+          Dormant Accounts
+          </h4>
+            <table id="shortCycleTable" class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>Account</th>
+                  <th>Lead</th>
+                  <th>Last Contact</th>
+                  <th>Opportunity</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="editable" ng-repeat="opportunity in opportunities | filter: { type: 'short', is_archived: false }">
+                  <td class="editableField">
+                    <span ng-hide="editMode">{{ opportunity.account }}</span>
+                    <input type="text" ng-show="editMode" id="account" class="form-control oppForm" ng-model="opportunity.account" ng-required/>
+                  </td>
+                  <td class="editableField">
+                    <span ng-hide="editMode">{{ opportunity.lead }}</span>
+                    <input type="text" ng-show="editMode" id="bdLeads" class="form-control oppForm" ng-model="opportunity.lead" ng-required/>
+                  </td>
+                  <td class="editableField">
+                    <span ng-hide="editMode">{{ opportunity.lastContact | date:'longDate' }}</span>
+                    <input type="date" ng-show="editMode" id="lastContact" class="form-control oppForm" ng-model="opportunity.lastContact" ng-required/>
+                  </td>
+                  <td class="editableField">
+                    <span ng-hide="editMode">{{ opportunity.opportunityName }}</span>
+                    <input type="text" ng-show="editMode" id="opportunity" class="form-control oppForm" ng-model="opportunity.opportunityName" ng-required/>
+                  </td>
+                  <td class="editableField">
+                    <span ng-hide="editMode">{{ opportunity.opportunityStatus }}</span>
+                    <select ng-show="editMode" id="status" class="form-control oppForm inline" ng-model="opportunity.opportunityStatus">
+                        <option>Target</option>
+                        <option>In Progress</option>
+                        <option>Submitted</option>
+                        <option>Won</option>
+                        <option>Lost</option>
+                      </select>
+                  </td>
+                  <td class="rowControl">
+                    <span class="glyphicon glyphicon-trash glyphicon-fade" ng-hide="editMode" ng-click="archiveOpportunity(opportunity)" title="Delete"></span>
+                    <span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow" ng-hide="editMode" ng-click="editMode = true; editTableRow(opportunity)" title="Edit"></span>
+                    <span class="glyphicon glyphicon-ok inline f_addRow" ng-show="editMode" ng-click="editMode = false; updateOpportunity(opportunity)"></span>
+                    <span class="glyphicon glyphicon-remove" ng-show="editMode" ng-click="editMode = false; cancel()"></span>
+                  </td>
+                </tr>
+                <!-- Add new row form -->
+                <tr id="shortOpportunityForm" class="editable formRow">
+                  <td>
+                    <form>
+                      <input type="text" id="account" placeholder="Account" class="form-control oppForm" ng-model="newOpportunity.account" required/>
+                      </td><td>
+                      <input type="text" id="bdLead" placeholder="BD Lead" class="form-control oppForm" ng-model="newOpportunity.lead" required/>
+                      </td><td>
+                      <input type="date" id="lastContact" class="form-control oppForm" ng-model="opportunity.lastContact" ng-required/>
+                      </td><td>
+                      <input type="text" id="opportunity" placeholder="Opportunity Name" class="form-control oppForm" ng-model="newOpportunity.opportunityName" required/>
+                      </td><td>
+                      <select class="form-control oppForm inline" id="status" ng-model="newOpportunity.opportunityStatus" required>
+                        <option>Target</option>
+                        <option>In Progress</option>
+                        <option>Submitted</option>
+                        <option>Won</option>
+                        <option>Lost</option>
+                      </select>
+                    </form>
+                      <span class="glyphicon glyphicon-ok" ng-click="addOpportunity(newOpportunity, 'short')"></span>
+                      <!--<span class="glyphicon glyphicon-ok inline f_addRow" id="addOpp"></span>-->
+                      </td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="label label-primary f_showShortFormRow" id="f_addNewRow">+</span>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="row">
+
+      <!-- Long Cycle Table -->
+     
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Long Cycle
+          </div>
+          <div class="panel-body">
+          <h4> New Target Accounts</h4>
+          <table id="dormantCycleTable" class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>Account</th>
+                  <th>Lead</th>
+                  <th>Last Contact</th>
+                  <th>Opportunity</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="editable" ng-repeat="opportunity in opportunities | filter: { type: 'long', is_archived: false }">
+                  <td class="editableField">
+                    <span ng-hide="editMode">{{ opportunity.account }}</span>
+                    <input type="text" ng-show="editMode" id="account" class="form-control oppForm" ng-model="opportunity.account" ng-required/>
+                  </td>
+                  <td class="editableField">
+                    <span ng-hide="editMode">{{ opportunity.lead }}</span>
+                    <input type="text" ng-show="editMode" id="bdLeads" class="form-control oppForm" ng-model="opportunity.lead" ng-required/>
+                  </td>
+                  <td class="editableField">
+                    <span ng-hide="editMode">{{ opportunity.lastContact | date:'longDate' }}</span>
+                    <input type="date" ng-show="editMode" id="lastContact" class="form-control oppForm" ng-model="opportunity.lastContact" ng-required/>
+                  </td>
+                  <td class="editableField">
+                    <span ng-hide="editMode">{{ opportunity.opportunityName }}</span>
+                    <input type="text" ng-show="editMode" id="opportunity" class="form-control oppForm" ng-model="opportunity.opportunityName" ng-required/>
+                  </td>
+                  <td class="editableField">
+                    <span ng-hide="editMode">{{ opportunity.opportunityStatus }}</span>
+                    <select ng-show="editMode" id="status" class="form-control oppForm inline" ng-model="opportunity.opportunityStatus">
+                        <option>Target</option>
+                        <option>In Progress</option>
+                        <option>Submitted</option>
+                        <option>Won</option>
+                        <option>Lost</option>
+                      </select>
+                  </td>
+                  <td class="rowControl">
+                    <span class="glyphicon glyphicon-trash glyphicon-fade" ng-hide="editMode" ng-click="archiveOpportunity(opportunity)" title="Delete"></span>
+                    <span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow" ng-hide="editMode" ng-click="editMode = true; editTableRow(opportunity)" title="Edit"></span>
+                    <span class="glyphicon glyphicon-ok inline f_addRow" ng-show="editMode" ng-click="editMode = false; updateOpportunity(opportunity)"></span>
+                    <span class="glyphicon glyphicon-remove" ng-show="editMode" ng-click="editMode = false; cancel()"></span>
+                  </td>
+                </tr>
+                <!-- Add new row form -->
+                <tr id="longOpportunityForm" class="editable formRow">
+                  <td>
+                    <form>
+                      <input type="text" id="account" placeholder="Account" class="form-control oppForm" ng-model="newOpportunity.account" required/>
+                      </td><td>
+                      <input type="text" id="bdLead" placeholder="BD Lead" class="form-control oppForm" ng-model="newOpportunity.lead" required/>
+                      </td><td>
+                      <input type="date" id="lastContact" class="form-control oppForm" ng-model="opportunity.lastContact" ng-required/>
+                      </td><td>
+                      <input type="text" id="opportunity" placeholder="Opportunity Name" class="form-control oppForm" ng-model="newOpportunity.opportunityName" required/>
+                      </td><td>
+                      <select class="form-control oppForm inline" id="status" ng-model="newOpportunity.opportunityStatus" required>
+                        <option>Target</option>
+                        <option>In Progress</option>
+                        <option>Submitted</option>
+                        <option>Won</option>
+                        <option>Lost</option>
+                      </select>
+                    </form>
+                      <span class="glyphicon glyphicon-ok" ng-click="addOpportunity(newOpportunity, 'long')"></span>
+                      <!--<span class="glyphicon glyphicon-ok inline f_addRow" id="addOpp"></span>-->
+                      </td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="label label-primary f_showLongFormRow">+</span>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+  <!-- Modules -->
+
+  <script src="js/app.js"></script>
+
+  <!-- Controllers -->
+
+  <script src="js/controllers/MainController.js"></script>
+
+  <!-- Directives -->
+
+
+
+  <!-- Services -->
+
+
+  <!--<script>
+  (function(d3) {
+
+  // D3 donut chart experiment
+var dataset = [
+  { label: 'Late Stage', count: 2},
+  { label: 'Mid Stage', count: 12},
+  { label: 'Early Stage', count: 10},
+];
+
+var width = 120;
+var height = 120;
+var donutWidth = 30;
+var radius = Math.min(width,height) / 2;
+
+var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+var svg = d3.select('#chart')
+  .append('svg')
+  .attr('width', width)
+  .attr('height', height)
+  .attr('style', 'display: block; margin: auto')
+  .append('g')
+  .attr('transform', 'translate(' + (width/2) + ',' + (height/2) + ')');
+
+var arc = d3.arc()
+  .innerRadius(radius - donutWidth)
+  .outerRadius(radius);
+
+var pie = d3.pie()
+  .value(function(d) { return d.count; })
+  .sort(null);
+
+var path = svg.selectAll('path')
+  .data(pie(dataset))
+  .enter()
+  .append('path')
+  .attr('d', arc)
+  .attr('fill', function(d, i) {
+    return color(d.data.label);
+  });
+
+  })(window.d3);
+
+  </script>-->
+  </body>
+  </html>

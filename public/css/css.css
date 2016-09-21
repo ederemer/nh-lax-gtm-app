@@ -1,0 +1,56 @@
+h1, h2, h3, h4, p, div, td, body, head {
+	font-family: 'Open Sans', sans-serif;;
+}
+
+donutChart {
+	width: 100%;
+  	height: 100%;
+  	postion: absolute;
+  	padding: 5px;
+}
+
+.new-row-button {
+  font-size: 12pt;
+  padding: 0px 6px 0px 6px;
+}
+
+input[type=text] {
+	width: 100px;
+}
+
+.oppForm {
+	width: 100px	!important;
+}
+
+#status, #addOpp, #header-title, #header-img {
+	display:inline-block;
+}
+
+#headerBar {
+    height: 20px;
+    background: #064193;
+}
+
+.glyphicon-fade {
+	opacity: 0.1;
+	padding: 1px;
+}
+
+.glyphicon-fade:hover {
+	opacity: 1;
+}
+
+.inline {
+	display: inline-block !important;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.editable-table {
+	font-size: 10pt;
+}
+
+#chart {
+	margin: auto;
+	display: block;
+}
