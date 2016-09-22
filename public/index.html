@@ -61,7 +61,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="editable" ng-repeat="opportunity in opportunities | filter: { type: 'short', is_archived: false }">
+                <tr class="editable" ng-repeat="opportunity in opportunities | filter: { type: 'short', is_archived: false } | orderBy: '-lastContact'">
                   <td class="editableField">
                     <span ng-hide="editMode">{{ opportunity.account }}</span>
                     <input type="text" ng-show="editMode" id="account" class="form-control oppForm" ng-model="opportunity.account" ng-required/>
@@ -158,7 +158,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="editable" ng-repeat="opportunity in opportunities | filter: { type: 'long', is_archived: false }">
+                <tr class="editable" ng-repeat="opportunity in opportunities | filter: { type: 'long', is_archived: false } | orderBy: '-lastContact'">
                   <td class="editableField">
                     <span ng-hide="editMode">{{ opportunity.account }}</span>
                     <input type="text" ng-show="editMode" id="account" class="form-control oppForm" ng-model="opportunity.account" ng-required/>
