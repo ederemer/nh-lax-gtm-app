@@ -119,14 +119,12 @@
                       <span class="glyphicon glyphicon-ok" ng-click="addOpportunity(newOpportunity, 'short'); toggleShowEditRow('short')"></span>
                       </td>
                 </tr>
-                <tr ng-show="showSuccessAlertShort">
-                      <td colspan="6">
-                        <div class="alert alert-success" ng-show="showSuccessAlertShort">
-        <button type="button" class="close" data-ng-click="switchAlertBool('showSuccessAlertShort')">×</button> <strong>Added:</strong> {{ successTextAlert }}</div>
-                      </td>
-                </tr>
+                        
               </tbody>
             </table>
+            <div class="alert alert-success" ng-show="showSuccessAlertShort">
+            <button type="button" class="close" data-ng-click="switchAlertBool('showSuccessAlertShort')">×</button> <strong>Added:</strong> {{ successTextAlert }}</div>
+
             <span class="label label-primary f_showShortFormRow" id="f_addNewRow" ng-click="toggleShowEditRow('short')">+</span>
           </div>
           <div class="panel-footer">
@@ -222,14 +220,10 @@
                       <span class="glyphicon glyphicon-ok" ng-click="addOpportunity(newOpportunity, 'long'); toggleShowEditRow('long')"></span>
                       </td>
                 </tr>
-                <tr ng-show="showSuccessAlertLong">
-                      <td colspan="6">
-                        <div class="alert alert-success" ng-show="showSuccessAlertLong">
-        <button type="button" class="close" data-ng-click="switchAlertBool('showSuccessAlertLong')">×</button> <strong>Added:</strong> {{ successTextAlert }}</div>
-                      </td>
-                </tr>
               </tbody>
             </table>
+            <div class="alert alert-success" ng-show="showSuccessAlertLong">
+            <button type="button" class="close" data-ng-click="switchAlertBool('showSuccessAlertLong')">×</button> <strong>Added:</strong> {{ successTextAlert }}</div>
             <span class="label label-primary f_showLongFormRow" ng-click="toggleShowEditRow('long')">+</span>
           </div>
           <div class="panel-footer">
