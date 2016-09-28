@@ -1,0 +1,326 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"item",
+				"item_to_delete"
+			],
+			[
+				"row",
+				"rowControl"
+			],
+			[
+				"edit",
+				"editableField"
+			],
+			[
+				"f_",
+				"f_deleteRow"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"Comm",
+				"CommentSchema"
+			],
+			[
+				"state",
+				"stateParams"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "public/index.html",
+			"settings":
+			{
+				"buffer_size": 14289,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"Package Control: Install Package",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/elliot/Documents/github/nh-lax-gtm-app"
+	],
+	"file_history":
+	[
+		"/Users/elliot/Documents/github/nh-lax-gtm-app/public/js/controllers/MainController.js",
+		"/Users/elliot/Documents/github/nh-lax-gtm-app/public/js/models/opportunity.js",
+		"/Users/elliot/Documents/github/nh-lax-gtm-app/server.js",
+		"/Users/elliot/Documents/github/nh-lax-gtm-app/public/css/css.css",
+		"/Users/elliot/Documents/github/nh-lax-gtm-app/public/index.html",
+		"/Users/elliot/Documents/github/nh-lax-gtm-app/public/js/directives/d3chart.js",
+		"/Users/elliot/Documents/github/nh-lax-gtm-app/.gitignore",
+		"/Users/elliot/Documents/github/nh-lax-gtm-app/server.sublime-workspace",
+		"/Users/elliot/Desktop/nh-lax-gtm-mean/public/js/controllers/chartController.js",
+		"/Users/elliot/Desktop/nh-lax-gtm-mean/public/js/app.js",
+		"/Users/elliot/Desktop/nh-lax-gtm-mean/server.js",
+		"/Users/elliot/Desktop/nh-lax-gtm-mean/public/index.html",
+		"/Users/elliot/Desktop/nh-lax-gtm-mean/public/js/controllers/MainController.js",
+		"/Users/elliot/Desktop/nh-lax-gtm-mean/public/js/models/opportunity.js",
+		"/Users/elliot/Desktop/nh-lax-gtm-leaderboard/public/index.html",
+		"/Users/elliot/Desktop/nh-lax-gtm-leaderboard/server.js",
+		"/Users/elliot/Desktop/nh-lax-gtm-leaderboard/public/js/controllers/leaderboardController.js",
+		"/Users/elliot/Desktop/nh-lax-gtm-leaderboard/public/js/models/opportunity.js",
+		"/Volumes/elliotd/Desktop/nh-lax-gtm-mean/public/js/controllers/MainController.js",
+		"/Volumes/elliotd/Desktop/nh-lax-gtm-mean/public/js/app.js",
+		"/Users/elliot/Documents/github/nh-lax-gtm/index.html",
+		"/Users/elliot/Documents/github/nh-lax-gtm/js/app.js",
+		"/Users/elliot/Documents/github/nh-lax-gtm/js/controllers/MainController.js",
+		"/Users/elliot/Documents/github/nh-lax-gtm/js/directives/opportunityList.js",
+		"/Users/elliot/Documents/github/nh-lax-gtm/js/directives/opportunityList.html",
+		"/Users/elliot/Documents/github/nh-lax-gtm/js/controllers/leaderboardController.js",
+		"/Users/elliot/Documents/github/nh-lax-gtm/js/directives/opportunity.js",
+		"/Users/elliot/Documents/github/nh-lax-gtm/js/directives/opportunity.html",
+		"/Users/elliot/Documents/github/nh-lax-gtm/js/directives/leaderboard.js",
+		"/Users/elliot/Documents/github/nh-lax-gtm/js/directives/leaderboard.html",
+		"/Users/elliot/Documents/github/nh-lax-gtm/js/controllers/leaderboard.js",
+		"/Users/elliot/Documents/github/nh-lax-gtm/js/directives/table.html",
+		"/Users/elliot/Documents/github/nh-lax-gtm/js/directives/table.js",
+		"/Users/elliot/Box Sync/nh-lax-gtm/css/css.css",
+		"/Users/elliot/Box Sync/nh-lax-gtm/index.html",
+		"/Users/elliot/Box Sync/nh-lax-gtm/js/app.js",
+		"/Users/elliot/Documents/js/bootstrap-3.3.6/README.md",
+		"/Users/elliot/Documents/github/css/css.css",
+		"/Users/elliot/Documents/js/bootstrap-3.3.6/docs/examples/theme/index.html",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c07/basic-example.html",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c07/js/ebasic-example.js",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c07/position.html",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c07/example.html",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c07/js/example.js",
+		"/Users/elliot/Desktop/nh-west slack channels",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c07/dimensions.html",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c07/css/c07.css",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c07/ebasic-example.html",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c05/eList.html",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c05/js/example.js",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c05/example.html",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c05/inner-html.html",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c05/js/inner-html.js",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c01/add-content.html",
+		"/Users/elliot/Desktop/Business Buzzword Bingo!_files/gamelogic.js",
+		"/Users/elliot/Desktop/Business Buzzword Bingo!_files/bingo.css",
+		"/Users/elliot/Desktop/Business Buzzword Bingo!_files/buzzwords.js",
+		"/Users/elliot/Desktop/Business Buzzword Bingo!.htm",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c03/eMultiple-objects.js",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c03/object-literal2.html",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c03/js/eObject-literal2.js",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c03/js/eObject-literal.js",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c03/object-literal.html",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c03/eObject-literal.js",
+		"/Users/elliot/Documents/github/flapper-news-mean-tutorial/flapper-news/models/posts.js",
+		"/Users/elliot/Documents/github/flapper-news-mean-tutorial/flapper-news/models/comments.js",
+		"/Users/elliot/Documents/github/flapper-news-mean-tutorial/flapper-news/app.js",
+		"/Users/elliot/Documents/github/javascript-and-jquery-book-code-0915/c03/css/c03.css",
+		"/Users/elliot/Documents/github/flapper-news-mean-tutorial/flapper-news/views/index.ejs.html",
+		"/Users/elliot/Documents/FlapperNews/app.js",
+		"/Users/elliot/Documents/FlapperNews/index.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".put",
+			"is_deleted",
+			"$index",
+			"deleteOpportunity",
+			"archive",
+			"deleted",
+			"item",
+			"+",
+			"ng-controller",
+			"\t\t",
+			"headline"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/Users/elliot/Documents/github/nh-lax-gtm-app"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14289,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6889,
+								6889
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1647.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

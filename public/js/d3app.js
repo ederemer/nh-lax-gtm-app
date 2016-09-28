@@ -1,1 +1,0 @@
-var d3app = angular.module('d3app', []);

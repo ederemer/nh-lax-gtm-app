@@ -44,7 +44,7 @@
         .post(function(req, res, next) {
 
             var opportunity = new Opportunity(req.body); // create new instance of Opportunity model
-
+            console.log(opportunity);
             // save the opportunity
             opportunity.save(function(err, opportunities) {
                 if (err) 

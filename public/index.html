@@ -103,7 +103,7 @@
                       </td><td>
                       <input type="text" id="bdLead" placeholder="BD Lead" class="form-control oppForm" ng-model="newOpportunity.lead" required/>
                       </td><td>
-                      <input type="date" id="lastContact" class="form-control oppForm" ng-model="opportunity.lastContact" ng-required/>
+                      <input type="date" id="lastContact" class="form-control oppForm" ng-model="newOpportunity.lastContact" ng-required/>
                       </td><td>
                       <input type="text" id="opportunity" placeholder="Description" class="form-control oppForm" ng-model="newOpportunity.opportunityName" required/>
                       </td><td>
@@ -115,8 +115,8 @@
                         <option>Lost</option>
                       </select>
                     </form>
+                    </td><td>
                       <span class="glyphicon glyphicon-ok" ng-click="addOpportunity(newOpportunity, 'short')"></span>
-                      <!--<span class="glyphicon glyphicon-ok inline f_addRow" id="addOpp"></span>-->
                       </td>
                 </tr>
               </tbody>
@@ -200,7 +200,7 @@
                       </td><td>
                       <input type="text" id="bdLead" placeholder="BD Lead" class="form-control oppForm" ng-model="newOpportunity.lead" required/>
                       </td><td>
-                      <input type="date" id="lastContact" class="form-control oppForm" ng-model="opportunity.lastContact" ng-required/>
+                      <input type="date" id="lastContact" class="form-control oppForm" ng-model="newOpportunity.lastContact" ng-required/>
                       </td><td>
                       <input type="text" id="opportunity" placeholder="Description" class="form-control oppForm" ng-model="newOpportunity.opportunityName" required/>
                       </td><td>
@@ -212,8 +212,8 @@
                         <option>Lost</option>
                       </select>
                     </form>
+                    </td><td>
                       <span class="glyphicon glyphicon-ok" ng-click="addOpportunity(newOpportunity, 'long')"></span>
-                      <!--<span class="glyphicon glyphicon-ok inline f_addRow" id="addOpp"></span>-->
                       </td>
                 </tr>
               </tbody>

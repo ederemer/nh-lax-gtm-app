@@ -34,12 +34,10 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 			console.log(res.data);
 			$scope.chartData = res.data;
 		});
-	console.log($scope.chartData);
 		
 	$scope.addOpportunity = function(newOpportunity, opportunityType) {
 		$scope.newOpportunity.type = opportunityType;
 		$scope.newOpportunity.is_deleted = false;
-		console.log(newOpportunity);
 		$http.post('/api/opportunities', newOpportunity)
 			.success(function(data) {
 				$scope.newOpportunity = {};
