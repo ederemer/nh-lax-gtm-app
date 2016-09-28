@@ -12,8 +12,8 @@
 
     // configuration =================
     mongoose.Promise = global.Promise;
-    mongoose.connect('mongodb://prod:produser@ds035846.mlab.com:35846/nh-lax-gtm');     // connect to mongoDB database 
-    //mongoose.connect('mongodb://localhost:27017/nhlaxgtm');
+    //mongoose.connect('mongodb://prod:produser@ds035846.mlab.com:35846/nh-lax-gtm');     // connect to mongoDB database 
+    mongoose.connect('mongodb://localhost:27017/nhlaxgtm');
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
     app.use(morgan('dev'));                                         // log every request to the console
     app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded

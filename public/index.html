@@ -96,7 +96,7 @@
                   </td>
                 </tr>
                 <!-- Add new row form -->
-                <tr id="shortOpportunityForm" class="editable formRow">
+                <tr id="shortOpportunityForm" class="editable formRow" ng-show="showEditRowShort">
                   <td>
                     <form>
                       <input type="text" id="account" placeholder="Account" class="form-control oppForm" ng-model="newOpportunity.account" required/>
@@ -116,12 +116,18 @@
                       </select>
                     </form>
                     </td><td>
-                      <span class="glyphicon glyphicon-ok" ng-click="addOpportunity(newOpportunity, 'short')"></span>
+                      <span class="glyphicon glyphicon-ok" ng-click="addOpportunity(newOpportunity, 'short'); toggleShowEditRow('short')"></span>
+                      </td>
+                </tr>
+                <tr ng-show="showSuccessAlertShort">
+                      <td colspan="6">
+                        <div class="alert alert-success" ng-show="showSuccessAlertShort">
+        <button type="button" class="close" data-ng-click="switchAlertBool('showSuccessAlertShort')">×</button> <strong>Added:</strong> {{ successTextAlert }}</div>
                       </td>
                 </tr>
               </tbody>
             </table>
-            <span class="label label-primary f_showShortFormRow" id="f_addNewRow">+</span>
+            <span class="label label-primary f_showShortFormRow" id="f_addNewRow" ng-click="toggleShowEditRow('short')">+</span>
           </div>
           <div class="panel-footer">
             <p class="legend">
@@ -193,7 +199,7 @@
                   </td>
                 </tr>
                 <!-- Add new row form -->
-                <tr id="longOpportunityForm" class="editable formRow">
+                <tr id="longOpportunityForm" class="editable formRow" ng-show="showEditRowLong">
                   <td>
                     <form>
                       <input type="text" id="account" placeholder="Account" class="form-control oppForm" ng-model="newOpportunity.account" required/>
@@ -213,12 +219,18 @@
                       </select>
                     </form>
                     </td><td>
-                      <span class="glyphicon glyphicon-ok" ng-click="addOpportunity(newOpportunity, 'long')"></span>
+                      <span class="glyphicon glyphicon-ok" ng-click="addOpportunity(newOpportunity, 'long'); toggleShowEditRow('long')"></span>
+                      </td>
+                </tr>
+                <tr ng-show="showSuccessAlertLong">
+                      <td colspan="6">
+                        <div class="alert alert-success" ng-show="showSuccessAlertLong">
+        <button type="button" class="close" data-ng-click="switchAlertBool('showSuccessAlertLong')">×</button> <strong>Added:</strong> {{ successTextAlert }}</div>
                       </td>
                 </tr>
               </tbody>
             </table>
-            <span class="label label-primary f_showLongFormRow">+</span>
+            <span class="label label-primary f_showLongFormRow" ng-click="toggleShowEditRow('long')">+</span>
           </div>
           <div class="panel-footer">
             <p class="legend">

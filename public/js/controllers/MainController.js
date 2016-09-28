@@ -4,6 +4,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 	$scope.newOpportunity = {};
 	$scope.editing = false;
 
+
 	$http.get('/api/opportunities')
 		.success(function(data){
 			$scope.opportunities = data;
@@ -36,8 +37,28 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 		});
 		
 	$scope.addOpportunity = function(newOpportunity, opportunityType) {
+		// Set default attributes
 		$scope.newOpportunity.type = opportunityType;
 		$scope.newOpportunity.is_deleted = false;
+		$scope.showSuccessAlertShort = false;
+		$scope.showSuccessAlertLong = false;
+
+		// Set alert message attributes
+		$scope.successTextAlert = newOpportunity.account + ' - ' + newOpportunity.opportunityName;
+		// Show alert in proper place
+		if (opportunityType === 'short') {
+			$scope.showSuccessAlertShort = !$scope.showSuccessAlertShort;
+		} else if (opportunityType === 'long') {
+			$scope.showSuccessAlertLong = !$scope.showSuccessAlertLong;
+			console.log($scope.showSuccessAlertLong);
+		};
+
+		// Alert switch flag
+		$scope.switchAlertBool = function(value) {
+			$scope[value] = !$scope[value];
+		};
+
+		// Post function
 		$http.post('/api/opportunities', newOpportunity)
 			.success(function(data) {
 				$scope.newOpportunity = {};
@@ -50,6 +71,20 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 						console.log('Error:' + data);
 					});
 			});
+	};
+
+	// Hide edit row in tables
+	$scope.showEditRowShort = false;
+	$scope.showEditRowLong = false;
+	// Toggle showing edit row (2 places in HTML)
+	$scope.toggleShowEditRow = function(value) {
+		console.log(value);
+		if (value === 'short') {
+			$scope.showEditRowShort = !$scope.showEditRowShort;
+			console.log($scope.showEditRowShort);
+		} else if (value === 'long') {
+			$scope.showEditRowLong = !$scope.showEditRowLong;
+		};
 	};
 
 	$scope.updateOpportunity = function(opportunity) {
@@ -97,6 +132,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 		var index = $scope.opportunities.indexOf(itemToAdd);
 		$scope.opportunities.splice(index, 1);
 		$scope.opportunities.push(angular.copy(itemToAdd));
-	}
+	};
+
 
 }])
